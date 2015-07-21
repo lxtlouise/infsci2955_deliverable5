@@ -1,3 +1,4 @@
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class Game {
@@ -9,6 +10,7 @@ public class Game {
 		_player = p;
 		_house = h;
 	}
+	
 	
 	public int doSomething(String move) {
 		int toReturn = 0;
@@ -36,7 +38,7 @@ public class Game {
 	public int run() {
 		int toReturn = 0;
 		
-		Scanner in = new Scanner(System.in);
+		ScannerAsker sa = new ScannerAsker(System.in);
 		String move = null;
 		
 		boolean gameOver = false;
@@ -45,7 +47,7 @@ public class Game {
 		while (!gameOver) {
 			System.out.println(_house.getCurrentRoomInfo());
 			System.out.println(" INSTRUCTIONS (N,S,L,I,D) > ");
-			move = in.nextLine();
+			move = sa.ask();
 			int status = doSomething(move);
 			if (status == 1) {
 				gameOver = true;
@@ -66,5 +68,21 @@ public class Game {
 		
 		return toReturn;
 	}
+	
+	//add a class to read input from console, making run() more testable
+	public static class ScannerAsker {
+		
+	    private final Scanner scanner;
+
+	    public ScannerAsker(InputStream in) {
+	        scanner = new Scanner(in);
+	    }
+
+	    public String ask() {
+	        return scanner.nextLine();
+	    }
+	
+
+}
 	
 }
