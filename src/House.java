@@ -63,13 +63,12 @@ public class House {
 		boolean hasCream = false;
 		boolean hasSugar = false;
 		
+		//refactor the code to make it cleaner and more efficient
 		for (int j = 0; j < numRooms; j++) {
 			
-			if (j == 0) { hasCream = true; } else {hasCream = false; };
+			if (j == 0) { hasCream = true; southDoor = false;} else {hasCream = false;};
 			if (j == 2) { hasCoffee = true; } else {hasCoffee = false; };
-			if (j == (numRooms - 1)) { hasSugar = true; } else { hasSugar = false; };
-			if (j == 0) { southDoor = false; } else { southDoor = true; }
-			if (j == (numRooms - 1)) { northDoor = false; } else { northDoor = true; }
+			if (j == (numRooms - 1)) { hasSugar = true; northDoor = false;} else { hasSugar = false; };
 			
 			toReturn[j] = new Room(hasCoffee, hasCream, hasSugar, northDoor, southDoor);
 		}
