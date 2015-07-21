@@ -78,4 +78,30 @@ public class House {
 	}
 	
 	
+    //getter and setter for the private variables
+	public int get_numRooms() {
+		return _numRooms;
+	}
+
+	public void set_numRooms(int _numRooms) {
+		this._numRooms = _numRooms;
+	}
+
+	public Room[] get_rooms() {
+		return _rooms;
+	}
+
+	public void set_rooms(Room[] _rooms) {
+		this._rooms = _rooms;
+	}
+
+	public int get_currentRoom() {
+		return _currentRoom;
+	}
+
+	public void set_currentRoom(int _currentRoom) {
+		this._currentRoom = _currentRoom;
+	}
+	
+	
 }
