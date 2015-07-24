@@ -32,8 +32,8 @@ public class TestSearch {
 		WebElement search=driver.findElement(By.className("_586i"));
 		search.sendKeys("Jie Chen");
 		driver.findElement(By.className("_5b1w")).click();
-	    driver.findElement(By.className("clearfix"));
-	    String strs=driver.findElement(By.className("clearfix")).getText();
+	        driver.findElement(By.className("clearfix"));
+	        String strs=driver.findElement(By.className("clearfix")).getText();
 		assertTrue(strs.contains("jie chen"));
 		  
 		//((JavascriptExecutor) driver).executeScript("document.getElementsByClassName('inputtext _586f hidden_elem').item(0).value = 'jie chen pittsburgh';");
