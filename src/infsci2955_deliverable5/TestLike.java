@@ -2,6 +2,7 @@ package infsci2955_deliverable5;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -11,11 +12,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestLike {
-	@Test
-	public void testLike(){
+	
+    WebDriver driver = new FirefoxDriver();
+	
+	//Log in Facebook first
+	@Before
+	public void setup(){
 		String email = "2014shufehey@gmail.com";
 		String pass = "2014shufe";
-		WebDriver driver = new FirefoxDriver();
 		  
 		driver.get("https://www.facebook.com/");
 
@@ -26,7 +30,12 @@ public class TestLike {
 		WebElement password = driver.findElement(By.id("pass"));
 		password.sendKeys(pass);
 		password.submit();
-		
+	}
+	
+	//Click the "Like" button,
+	//after clicking the button, the color will be changed from grey to blue.
+	@Test
+	public void testLike(){
 		driver.get("https://www.facebook.com/");
 		WebElement likeButton = driver.findElement(By.className("_4l5"));
 		WebElement clickLike = driver.findElement(By.tagName("a"));
