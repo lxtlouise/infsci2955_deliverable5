@@ -35,18 +35,6 @@ public class TestSearch {
 	        driver.findElement(By.className("clearfix"));
 	        String strs=driver.findElement(By.className("clearfix")).getText();
 		assertTrue(strs.contains("jie chen"));
-		  
-		//((JavascriptExecutor) driver).executeScript("document.getElementsByClassName('inputtext _586f hidden_elem').item(0).value = 'jie chen pittsburgh';");
-//        WebElement s = driver.findElement(By.tagName("button"));
-//        s.click();
-//		try {
-//			WebElement result = driver.findElement(By.id("login_form")).findElement(By.tagName("p"));
-//			String actual = result.getText();
-//			String expected = "The password you entered is incorrect. Please try again (make sure your caps lock is off).";
-//			assertEquals(expected, actual);
-//			driver.quit();
-//		} catch (NoSuchElementException e) {
-//			fail();
-//		}
+
 	}
 }
