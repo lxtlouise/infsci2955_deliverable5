@@ -16,6 +16,7 @@ public class TestSendMessage {
 	
 	static WebDriver driver=new FirefoxDriver(); 
 
+	//Log in Facebook first.
 	@Before
 	public void setup() {
 		String email = "2014shufehey@gmail.com";
