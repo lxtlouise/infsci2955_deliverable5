@@ -19,6 +19,8 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Document;
 
 public class TestLogIn {
 	
+	//Log in Facebook with invalid email and invalid password, 
+	//then the user will be shown with an error message.
 	@Test
 	public void testLogInInvalid(){
 		String email = "lxtlouise@163.com";
@@ -46,6 +48,8 @@ public class TestLogIn {
 		}
 	}
 	
+	//Log in Facebook with valid email and valid password,
+	//then the user will be redirected to his main page.
 	@Test
 	public void testLogInValid(){
 		String email = "2014shufehey@gmail.com";
