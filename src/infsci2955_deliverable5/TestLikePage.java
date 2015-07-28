@@ -30,12 +30,12 @@ public class TestLikePage {
 		password.submit();
 	}
 	
+	//precondition: if the page has been liked before, remember to set it as "unlike" before running this
 	@Test
 	public void testLikePage(){		
 		driver.get("https://www.facebook.com/AdoreABullResuceCincinnati");
-		WebElement like=driver.findElement(By.id("u_0_2l"));
-		like.click();
-		String actual = like.getCssValue("color");
+		driver.findElement(By.id("u_0_2g")).click();
+		String actual = driver.findElement(By.id("u_0_2j")).getCssValue("color");
 		String expect="rgba(78, 86, 101, 1)";
 		System.out.println(actual);
 		assertEquals(expect,actual);
