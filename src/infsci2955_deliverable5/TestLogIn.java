@@ -49,7 +49,7 @@ public class TestLogIn {
 	}
 	
 	//Log in Facebook with valid email and valid password,
-	//then the user will be redirected to his main page.
+	//then the user will be redirected to her main page in which there's the name of the user.
 	@Test
 	public void testLogInValid(){
 		String email = "2014shufehey@gmail.com";
