@@ -36,7 +36,7 @@ public class TestSearch {
 		search.sendKeys("Jie Chen");
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.findElement(By.className("_5b1w")).click();
-	    String strs=driver.findElement(By.className("clearfix")).getText();
+	        String strs=driver.findElement(By.className("clearfix")).getText();
 		assertTrue(strs.contains("jie chen"));
 
 	}
