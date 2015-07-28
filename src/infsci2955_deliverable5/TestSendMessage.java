@@ -31,7 +31,9 @@ public class TestSendMessage {
 		password.submit();
 	}
 	
-	//precondition: this message has never been send before
+	//precondition: this message has never been send before, because we use "contain" to test here
+	//choose the friend Jie to send a message to her
+	//then the conversation board must contain this message
 	@Test
 	public void testSendMessage(){
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

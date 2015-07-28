@@ -31,6 +31,8 @@ public class TestLikePage {
 	}
 	
 	//precondition: if the page has been liked before, remember to set it as "unlike" before running this
+	//go to an interested page, and click "Like"
+	//the color of the thumb will change
 	@Test
 	public void testLikePage(){		
 		driver.get("https://www.facebook.com/AdoreABullResuceCincinnati");

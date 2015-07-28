@@ -2,6 +2,8 @@ package infsci2955_deliverable5;
 
 import static org.junit.Assert.*;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,6 +15,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class TestSearch {
 	
+	//type in keywords, and the search result must contain these keywords
 	@Test
 	public void testSearchValid(){
 		String email = "2014shufehey@gmail.com";
@@ -31,9 +34,9 @@ public class TestSearch {
 		
 		WebElement search=driver.findElement(By.className("_586i"));
 		search.sendKeys("Jie Chen");
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.findElement(By.className("_5b1w")).click();
-	        driver.findElement(By.className("clearfix"));
-	        String strs=driver.findElement(By.className("clearfix")).getText();
+	    String strs=driver.findElement(By.className("clearfix")).getText();
 		assertTrue(strs.contains("jie chen"));
 
 	}

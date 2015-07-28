@@ -38,25 +38,28 @@ public class TestSharePost {
 	}
 	
 	//please add 1 to the total number of shares every time after running it
+	//share a post, and then the shared number under the original post will increase 1
 	@Test
 	public void testSharePost(){
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.className("_2dpb")).click();
+		
+		//find the post--"Eight" and repost it
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		WebElement share=driver.findElement(By.id("tl_unit_860758939920290495"));
 	    WebElement button=share.findElement(By.className("share_root")).findElement(By.tagName("a"));
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", button);
 		driver.findElement(By.className("_54nh")).click();
-		//just wait some time
+		
+		//just wait some time and refresh the page to make sure the new post shown in the TimeLine
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.id("u_jsonp_2_n")).sendKeys(Keys.ENTER);
 		driver.navigate().refresh();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		String s=driver.findElement(By.className("UFIShareLink")).getText();
-		//String s=driver.findElement(By.className("UFIShareLink")).getText();
-		System.out.println(s);
-		assertEquals(s,"2 shares");  //add one here
+		
+		assertEquals(s,"2 shares");  //add one here 
 	}
 
 }
