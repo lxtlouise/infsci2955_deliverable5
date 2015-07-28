@@ -19,6 +19,8 @@ public class TestSearch {
 	//and the search result must contain the user's name.
 	@Test
 	public void testSearchValid(){
+		
+		//Log in Facebook first.
 		String email = "2014shufehey@gmail.com";
 		String pass = "2014shufe";
 		WebDriver driver = new FirefoxDriver();
@@ -33,6 +35,8 @@ public class TestSearch {
 		password.sendKeys(pass);
 		password.submit();
 		
+		//Type in the name of the user that we're looking for,
+		//there should be the user's name in the returned result.
 		WebElement search=driver.findElement(By.className("_586i"));
 		search.sendKeys("Jie Chen");
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
