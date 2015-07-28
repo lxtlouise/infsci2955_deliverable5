@@ -32,10 +32,10 @@ public class TestLike {
 		password.submit();
 	}
 	
-	//Click the "Like" button,
+	//Click the "Like" button to like the posts of friends,
 	//after clicking the button, the color will be changed from grey to blue.
 	@Test
-	public void testLike(){
+	public void testLikePost(){
 		driver.get("https://www.facebook.com/");
 		WebElement likeButton = driver.findElement(By.className("_4l5"));
 		WebElement clickLike = driver.findElement(By.tagName("a"));
