@@ -22,6 +22,7 @@ public class TestSharePost {
 
 	static WebDriver driver=new FirefoxDriver(); 
 	
+	//Log in Facebook first.
 	@Before
 	public void setup() {
 		String email = "2014shufehey@gmail.com";
@@ -37,8 +38,8 @@ public class TestSharePost {
 		password.submit();
 	}
 	
-	//please add 1 to the total number of shares every time after running it
-	//share a post, and then the shared number under the original post will increase 1
+	//Please add 1 to the total number of shares every time after running it.
+	//Share a post, and then the shared number under the original post will increase 1.
 	@Test
 	public void testSharePost(){
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
