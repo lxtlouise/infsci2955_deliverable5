@@ -15,7 +15,8 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class TestSearch {
 	
-	//type in keywords, and the search result must contain these keywords
+	//Type in the name of the user that we're looking for, 
+	//and the search result must contain the user's name.
 	@Test
 	public void testSearchValid(){
 		String email = "2014shufehey@gmail.com";
