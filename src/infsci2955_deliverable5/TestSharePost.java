@@ -47,9 +47,9 @@ public class TestSharePost {
 		//find the post--"Eight" and repost it
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		WebElement share=driver.findElement(By.id("tl_unit_860758939920290495"));
-	    WebElement button=share.findElement(By.className("share_root")).findElement(By.tagName("a"));
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
-	    executor.executeScript("arguments[0].click();", button);
+	        WebElement button=share.findElement(By.className("share_root")).findElement(By.tagName("a"));
+	        JavascriptExecutor executor = (JavascriptExecutor)driver;
+	        executor.executeScript("arguments[0].click();", button);
 		driver.findElement(By.className("_54nh")).click();
 		
 		//just wait some time and refresh the page to make sure the new post shown in the TimeLine
